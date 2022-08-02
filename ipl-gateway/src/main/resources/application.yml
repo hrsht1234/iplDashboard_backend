@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ipl-gateway
+cloud:
+  gateway:
+    routes:
+      - id: match-api
+        uri: lb://match-api
+        predicates:
+          - Path=/match/**
+          
+server:
+  port: 8999
